@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
 	<meta charset="UTF-8" />
 	<title>{article_titre_page}{blog_nom}</title>
@@ -9,63 +9,69 @@
 	<meta name="viewport" content="width=device-width, user-scalable=yes" />
 	<meta name="keywords" content="{keywords}" />
 	<meta name="description" content="{blog_description}" />
+	<link rel="icon" type="image/png" href="{style}/images/favicon.png" />
+	<link rel="apple-touch-icon" href="{style}/images/apple-touch-icon.png">
+	<link rel="canonical" href="{racine_du_site}" />
+	<link rel="image_src" href="{style}/images/apple-touch-icon.png" />
+	<meta itemprop="name" content="{article_titre}" />
+	<meta itemprop="description" content="{article_chapo}" />
+	<meta itemprop="image" content="{style}/images/apple-touch-icon.png">
+	<meta property="og:title" content="{article_titre_page}{blog_nom}" />
+	<meta property="og:url" content="{racine_du_site}" />
+	<meta property="og:description" content="{blog_description}" />
+	<meta property="og:site_name" content="{blog_nom}" />
+	<meta property="og:locale" content="fr_FR" />
+	<meta property="og:image" content="{style}/images/apple-touch-icon.png" />
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="{style}/images/apple-touch-icon.png">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 	<link type="text/css" rel="stylesheet" href="{style}/style.css" />
 	<link type="application/rss+xml" rel="alternate" title="RSS 2.0 - Articles" href="{rss}" />
-	<style type="text/css">#email-adress{display:none!important;}</style>
 </head>
 <body>
-
-<header id="top">
-<h1><a href="{racine_du_site}">{blog_nom}</a></h1>
-<h2>{blog_description}</h2>
-</header>
-<div id="wrapper">
-	<section id="topbar">
-		<nav id="rss">
-			<a href="rss.php">RSS</a>
-		</nav>
-		<nav id="navigate">
-			{recherche}
-		</nav>
-	</section>
-	<section id="sidebar">
-		<nav id="calendar">
-			{calendrier}
-		</nav>
-		<nav id="tags">
-			<h3>Tags</h3>
-			{categories_encart}
-			<hr/>
-		</nav>
-	</section>
-
-	<section id="contenu">
-		{BOUCLE_posts}
-
-			// ici il s'affichera ce qu'on veut : un article, un commentaire, un lien sauvé…
-			// les thèmes pour ces choses sont dans le dossier "template"
-			// chaque "objet" (lien, article, …) dispose de son propre formatage. 
-
-			// **** le texte que vous mettez ici (dans la "boucle") ne sera pas éxécuté ni affiché. ****
-
-		{/BOUCLE_posts}
-		
-	</section>
-
-	<br style="clear:both;" />
-	{pagination}
-</div> <!-- einde #wrapper -->
-
-
-<footer><b>{blog_auteur}</b>, All right reserved – Published with <a href="http://lehollandaisvolant.net/blogotext/">BlogoText</a> – Theme by <a href="http://www.ayoglife.net/">yog</a></footer>
-
+	<header id="top">
+		<h1><a href="{racine_du_site}" title="">{blog_nom}</a></h1>
+		<h2>{blog_description}</h2>
+	</header>
+	<div id="wrapper">
+		<section id="topbar">
+			<nav id="rss">
+				<a href="rss.php" title="">RSS</a>
+			</nav>
+			<nav id="navigate">
+				{recherche}
+			</nav>
+		</section>
+		<section id="sidebar">
+			<nav id="calendar">
+				{calendrier}
+			</nav>
+			<nav id="tags">
+				<h3>Tags</h3>
+				{categories_encart}
+				<hr/>
+			</nav>
+		</section>
+		<section id="contenu">
+			{BOUCLE_posts}
+				// ici il s'affichera ce qu'on veut : un article, un commentaire, un lien sauvé…
+				// les thèmes pour ces choses sont dans le dossier "template"
+				// chaque "objet" (lien, article, …) dispose de son propre formatage. 
+				// **** le texte que vous mettez ici (dans la "boucle") ne sera pas éxécuté ni affiché. ****
+			{/BOUCLE_posts}
+		</section>
+		<br style="clear:both;" />
+		{pagination}
+	</div> <!-- einde #wrapper -->
+	<footer><b>{blog_auteur}</b>, All right reserved – Published with <a href="http://lehollandaisvolant.net/blogotext/" title="">BlogoText</a> – Theme by <a href="http://www.ayoglife.net/" title="">yog</a></footer>
+	
 <script type="text/javascript">
 /* Tag script found at : http://www.siteduzero.com/tutoriel-3-34703-insertion-de-balises-dans-une-zone-de-texte.html */
 function insertTag(startTag, endTag, tag, tagType) {
 	var field = document.getElementById(tag);
 	var scroll = field.scrollTop;
 	field.focus();
-
 	if (window.ActiveXObject) { // C'est IE
 		var textRange = document.selection.createRange();            
 		var currentSelection = textRange.text;
@@ -85,7 +91,6 @@ function insertTag(startTag, endTag, tag, tagType) {
 	}
 	field.scrollTop = scroll;
 }
-
 function reply(code) {
 	var field = document.getElementById('form-commentaire').getElementsByTagName('textarea')[0];
 	field.focus();
@@ -96,7 +101,6 @@ function reply(code) {
 	field.scrollTop = 10000;
 	field.focus();
 }
-
 function resize(id, dht) {
 	var elem = document.getElementById(id);
 	var ht = elem.offsetHeight;
@@ -104,9 +108,6 @@ function resize(id, dht) {
 	elem.style.height = size+"px";
 	return false;
 }
-
 </script>
-
-
 </body>
 </html>

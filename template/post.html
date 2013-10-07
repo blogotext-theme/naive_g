@@ -8,9 +8,7 @@
 		{article_contenu}
 	</div>
 	<p class="tags">{article_tags}</p>
-
 	<p id="nombre_comment"><span id="commentaires">{nombre_commentaires}</span></p>
-
 	{BOUCLE_commentaires}
 	<article class="comment" id="{commentaire_ancre}">
 	<h3>{commentaire_auteur_lien} - {commentaire_date} à {commentaire_heure}  </h3>
@@ -18,10 +16,8 @@
 		<p class="com-reply"><a href="#form-commentaire" onclick="reply('[b]@[{commentaire_auteur}|#{commentaire_ancre}] :[/b] ');">@répondre</a> <a href="#{commentaire_ancre}">#lien</a></p>
 	</article>
 	{/BOUCLE_commentaires}
-
 	<p><a href="{rss_comments}">RSS comments</a></p>
 	<div id="postcom">
 		{formulaire_commentaire}
 	</div>
 </article>
-
